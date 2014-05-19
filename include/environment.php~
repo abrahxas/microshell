@@ -1,0 +1,33 @@
+<?php
+
+function cmd_exit()
+{
+	die();
+}
+
+function my_cdcase($param)
+{
+	global $path; 
+	global $previous;
+	$array = explode("/", $path);
+
+	$previous = $path;
+	$path = "/";
+	for ($i = 1; isset($array[$i]); $i++)
+		{
+			if (isset($array[$i + 1]))
+				$path .= $array[$i]."/";
+		}
+}
+
+function cmd_env()
+{
+}
+
+function cmd_setenv()
+{
+}
+
+function cmd_unsetenv()
+{
+}
